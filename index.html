@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/skins/color-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- style switcher -->
+    <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
+    <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
+    <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
+    <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
+    <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
+    <link rel="stylesheet" href="css/style-switcher.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+          ['2004/05',  165,      938,         522,             998,           450,      614.6],
+          ['2005/06',  135,      1120,        599,             1268,          288,      682],
+          ['2006/07',  157,      1167,        587,             807,           397,      623],
+          ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+          ['2008/09',  136,      691,         629,             1026,          366,      569.6]
+        ]);
+
+        var options = {
+          title : 'Monthly Coffee Production by Country',
+          vAxis: {title: 'Cups'},
+          hAxis: {title: 'Month'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}},
+          is3D: true
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="aside">
+         
+         <div class="nav-toggler">
+             <span></span>
+         </div>
+         <ul class="nav">
+             <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
+             
+             <li><a href="#services"><i class="fa fa-list"></i>Dashboard</a></li>
+      
+         </ul>   
+        </div>
+        <div class="main-content">
+
+            <section class="home active section" id="home">
+                <div class="container">
+                    <div class="row">
+                         <div class="home-info padd-15">
+                             <h3 class="hello">Hello, my name is <span class="name">Abhijit Pattanaik</span></h3>
+                              <h3 class="my-profession">I am a <span class="typing">student</span></h3>
+                             <p>
+                                 <ul>
+                                  <li>2+ year experience of competitive coding in JAVA.</li>
+                                  <li>3rd Year Artificial Intelligence student at Dayananda Sagar College Of Engineering.
+                                  </li>
+                                </ul> 
+                            </p>
+                            <br>
+                             <a download href="Abhijit Pattanaik.pdf" class="btn">Download Cv</a>
+                         </div>
+                         <div class="home-img padd-15">
+                             <img src="images/me.jpg" alt="" style="width: 450px;">
+                         </div>
+                </div></div>
+            </section>
+
+            <section class="service section" id="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>
+                                Dashboard
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row" style="flex-direction: column;" id="charts">
+                        <div class="service-item padd-15" id="bar">
+                           
+                            <div id="chart_div" style="width: 900px; height: 500px;border-radius: 10px;"></div>
+                            
+                        </div>
+                        <div class="service-item padd-15" id="pie">
+                           
+                                <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            
+
+             
+        </div>
+     </div>
+
+     <div class="style-switcher">
+         <div class="style-switcher-toggler s-icon">
+             <i class="fas fa-cog fa-spin"></i>
+         </div>
+         <div class="day-night s-icon">
+             <i class="fas "></i>
+         </div>
+         <h4>Theme Colors</h4>
+         <div class="colors">
+             <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+             <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+             <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+             <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+             <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+         </div>
+     </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+    <script src="js/style-switcher.js"></script>
+</body>
+</html>
